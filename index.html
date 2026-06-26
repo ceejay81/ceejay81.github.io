@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Christopher Jude N. Espiritu — Entry-Level Full-Stack Developer from General Santos City. Builder of production web systems for local government using Laravel, PHP, and Flutter." />
+  <meta name="keywords" content="Christopher Jude Espiritu, full-stack developer, Laravel, PHP, Flutter, General Santos, portfolio" />
+  <meta property="og:title" content="Christopher Jude N. Espiritu — Full-Stack Developer" />
+  <meta property="og:description" content="Builder of production web systems for local government. 4 systems shipped, 3 live." />
+  <meta property="og:type" content="website" />
+  <title>Christopher Jude N. Espiritu — Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+
+  <!-- GRAIN OVERLAY -->
+  <div class="grain"></div>
+
+  <!-- ══════════════════════════════════════
+       NAV
+  ══════════════════════════════════════ -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo" id="easter-egg-trigger" aria-label="Home">C.J. Espiritu</a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about"      class="nav-link magnetic" data-section="about">About</a></li>
+      <li><a href="#projects"   class="nav-link magnetic" data-section="projects">Projects</a></li>
+      <li><a href="#experience" class="nav-link magnetic" data-section="experience">Experience</a></li>
+      <li><a href="#skills"     class="nav-link magnetic" data-section="skills">Skills</a></li>
+      <li><a href="#contact"    class="nav-link magnetic" data-section="contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta magnetic" id="nav-hire-btn">Hire Me →</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#about"      class="mobile-link">About</a></li>
+      <li><a href="#projects"   class="mobile-link">Projects</a></li>
+      <li><a href="#experience" class="mobile-link">Experience</a></li>
+      <li><a href="#skills"     class="mobile-link">Skills</a></li>
+      <li><a href="#contact"    class="mobile-link">Contact</a></li>
+      <li><a href="resume.html" class="mobile-link" target="_blank" rel="noopener">Download CV ↗</a></li>
+    </ul>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-content">
+      <p class="hero-eyebrow load-anim" style="--delay:0.1s">Entry-Level Full-Stack Developer</p>
+      <h1 class="hero-headline load-anim" style="--delay:0.25s">
+        Hi, I'm <span id="scramble-name">Jude</span>.
+      </h1>
+      <p class="hero-sub load-anim" style="--delay:0.4s">
+        I build production systems for local government —<br>
+        four deployed, three live, all serving real users.
+      </p>
+      <div class="hero-cta load-anim" style="--delay:0.55s">
+        <a href="#projects" class="btn-primary magnetic" id="hero-cta-primary">View My Work ↓</a>
+        <a href="resume.html" target="_blank" rel="noopener" class="btn-secondary" id="hero-cta-secondary">Download CV</a>
+      </div>
+      <div class="hero-contacts load-anim" style="--delay:0.7s">
+        <span>0915 033 2143</span>
+        <span class="hdivider">·</span>
+        <a href="mailto:cjsprite81@gmail.com">cjsprite81@gmail.com</a>
+        <span class="hdivider">·</span>
+        <a href="https://www.linkedin.com/in/christopher-jude-espiritu-b130823a6/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <span class="hdivider">·</span>
+        <span>General Santos City, PH</span>
+      </div>
+    </div>
+
+    <div class="hero-code load-anim" style="--delay:0.8s" aria-hidden="true">
+      <div class="code-window">
+        <div class="code-window-bar">
+          <span class="w-dot" style="background:#ff5f57"></span>
+          <span class="w-dot" style="background:#ffbd2e"></span>
+          <span class="w-dot" style="background:#28c840"></span>
+          <span class="code-filename">AppointmentController.php</span>
+        </div>
+        <pre class="code-body"><code id="code-typewriter"></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       STATS BAR
+  ══════════════════════════════════════ -->
+  <div class="stats-bar" id="stats-bar">
+    <div class="stat-item">
+      <span class="stat-num counter" data-target="4">0</span>
+      <span class="stat-lbl">Systems Shipped</span>
+    </div>
+    <span class="stat-div">·</span>
+    <div class="stat-item">
+      <span class="stat-num counter" data-target="3">0</span>
+      <span class="stat-lbl">Live in Production</span>
+    </div>
+    <span class="stat-div">·</span>
+    <div class="stat-item">
+      <span class="stat-num">OJT</span>
+      <span class="stat-lbl">2025 – 2026</span>
+    </div>
+    <span class="stat-div">·</span>
+    <div class="stat-item">
+      <span class="stat-num">BSIT</span>
+      <span class="stat-lbl">2026 Graduate</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════ -->
+  <section id="about" aria-label="About me">
+    <div class="container">
+      <h2 class="section-title split-target">About</h2>
+      <div class="about-grid">
+
+        <!-- Col 1: Profile Photo -->
+        <div class="about-photo-col reveal-left">
+          <div class="about-photo-wrap">
+            <img src="PFimage.jpg" alt="Christopher Jude Espiritu — Profile Photo" class="about-photo" loading="lazy">
+            <div class="about-photo-ring" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- Col 2: Bio text -->
+        <div class="about-text reveal">
+          <p>I'm a recent BSIT graduate and full-stack developer based in <strong>General Santos City, South Cotabato</strong>. My work sits at the intersection of practical software engineering and public service — building systems that real communities depend on daily.</p>
+          <p>During my internship at the <strong>City Treasurer's Office</strong>, I collaborated on four production systems — from an appointment platform used by thousands of health office visitors, to a fuel assistance registry for tricycle drivers. These aren't portfolio experiments; they're live, maintained systems running on LGU infrastructure.</p>
+          <p>My primary stack is <strong>Laravel + PHP</strong> on the backend and <strong>Flutter</strong> for mobile. I adapt quickly and I'm drawn to problems where software creates a measurable improvement in how government services reach people.</p>
+        </div>
+
+        <!-- Col 3: Facts card -->
+        <div class="about-facts reveal-right delay-1">
+          <div class="facts-card">
+            <div class="fact-row">
+              <span class="fact-lbl">Status</span>
+              <span class="fact-val"><span class="status-dot"></span> Open to Work</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">Primary Stack</span>
+              <span class="fact-val">Laravel · PHP · Flutter</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">Education</span>
+              <span class="fact-val">BSIT — RMMC, 2026</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">Location</span>
+              <span class="fact-val">GenSan, South Cotabato, PH</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">Available</span>
+              <span class="fact-val">Full-time · Remote · On-site</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">Email</span>
+              <span class="fact-val">
+                <a href="mailto:cjsprite81@gmail.com" class="fact-link">cjsprite81@gmail.com</a>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PROJECTS
+  ══════════════════════════════════════ -->
+  <section id="projects" aria-label="Key projects">
+    <div class="container">
+      <h2 class="section-title split-target">Key Projects</h2>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card stagger-card" aria-label="CHO Online Appointment System">
+          <div class="project-header">
+            <span class="badge-live">Live System</span>
+            <span class="project-type-lbl">Web Application</span>
+          </div>
+          <h3 class="project-name">CHO Online Appointment System</h3>
+          <p class="project-desc">Appointment scheduling platform for the City Health Office — handles health card processing, medical consultations, vaccinations, health screenings, and emergency services with daily capacity management.</p>
+          <div class="project-tags">
+            <span class="ptag">Laravel</span><span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span><span class="ptag">Bootstrap</span>
+          </div>
+          <a href="https://choappointment.lgugensan.com/" target="_blank" rel="noopener" class="project-url">
+            choappointment.lgugensan.com <span class="url-arrow">↗</span>
+          </a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card stagger-card" aria-label="Drivers Fuel Assistance System">
+          <div class="project-header">
+            <span class="badge-live">Live System</span>
+            <span class="project-type-lbl">Web Application</span>
+          </div>
+          <h3 class="project-name">Drivers Fuel Assistance System</h3>
+          <p class="project-desc">Online registration and verification platform for tricycle drivers to access fuel subsidy assistance from CSWDO, General Santos City. Digitized a previously paper-based process for thousands of drivers.</p>
+          <div class="project-tags">
+            <span class="ptag">Laravel</span><span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span><span class="ptag">RESTful API</span>
+          </div>
+          <a href="https://driversassistance.lgugensan.com/" target="_blank" rel="noopener" class="project-url">
+            driversassistance.lgugensan.com <span class="url-arrow">↗</span>
+          </a>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card stagger-card" aria-label="Cash Assistance Distribution System">
+          <div class="project-header">
+            <span class="badge-live">Live System</span>
+            <span class="project-type-lbl">Web Application</span>
+          </div>
+          <h3 class="project-name">Cash Assistance Distribution System</h3>
+          <p class="project-desc">Digital platform for managing and tracking cash assistance distribution to eligible constituents. Replaced manual logbook tracking with a searchable, auditable digital system serving GenSan residents.</p>
+          <div class="project-tags">
+            <span class="ptag">Laravel</span><span class="ptag">PHP</span>
+            <span class="ptag">MySQL</span><span class="ptag">Bootstrap</span>
+          </div>
+          <a href="https://cashassistance.lgugensan.com/" target="_blank" rel="noopener" class="project-url">
+            cashassistance.lgugensan.com <span class="url-arrow">↗</span>
+          </a>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card stagger-card" aria-label="Barangay Blotter System">
+          <div class="project-header">
+            <span class="badge-live">Client Contract</span>
+            <span class="project-type-lbl">Desktop Application</span>
+          </div>
+          <h3 class="project-name">Barangay Blotter System</h3>
+          <p class="project-desc">Custom-built offline blotter and incident recording system commissioned by a local barangay unit. Replaced manual logbooks with a secure database workflow, currently in daily active use.</p>
+          <div class="project-tags">
+            <span class="ptag">PHP</span><span class="ptag">MySQL</span>
+            <span class="ptag">Desktop</span>
+          </div>
+          <span class="project-url no-url">Government Use · No Public URL</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       EXPERIENCE
+  ══════════════════════════════════════ -->
+  <section id="experience" aria-label="Work experience">
+    <div class="container">
+      <h2 class="section-title split-target">Experience</h2>
+      <div class="timeline">
+        <div class="tl-line-wrap" aria-hidden="true">
+          <div class="tl-line draw-line"></div>
+        </div>
+        <!-- Freelance Experience -->
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <div class="tl-top">
+              <div>
+                <div class="tl-role">Freelance Full-Stack Developer</div>
+                <div class="tl-company">Barangay Local Government Unit, General Santos City</div>
+              </div>
+              <div class="tl-date">2026</div>
+            </div>
+            <ul class="tl-list">
+              <li>Secured a paid contract to design, engineer, and deploy a standalone incident tracking and recording system.</li>
+              <li>Replaced manual, paper-based incident logbooks with a secure MySQL database system.</li>
+              <li>Conducted direct requirements gathering with barangay officials and delivered hands-on system training for local administrators.</li>
+              <li>Provided ongoing post-deployment support; the system is actively used for daily incident documentation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- OJT Experience -->
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <div class="tl-top">
+              <div>
+                <div class="tl-role">On-the-Job Trainee — Full-Stack Developer</div>
+                <div class="tl-company">City Treasurer's Office, General Santos City</div>
+              </div>
+              <div class="tl-date">2025 – 2026</div>
+            </div>
+            <ul class="tl-list">
+              <li>Collaborated with an internal development team to design and ship three government systems supporting municipal workflows.</li>
+              <li>Assisted in requirement elicitation meetings with treasury department heads and local personnel.</li>
+              <li>Conducted comprehensive system testing, debugging, QA verification, and user training sessions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SKILLS
+  ══════════════════════════════════════ -->
+  <section id="skills" aria-label="Technical skills">
+    <div class="container">
+      <h2 class="section-title split-target">Technical Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-group reveal">
+          <div class="skill-group-lbl">Backend</div>
+          <div class="skill-tags">
+            <span class="skill-tag primary">Laravel</span>
+            <span class="skill-tag primary">PHP</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">RESTful APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <div class="skill-group-lbl">Mobile</div>
+          <div class="skill-tags">
+            <span class="skill-tag primary">Flutter</span>
+            <span class="skill-tag">Dart</span>
+            <span class="skill-tag">Android Development</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <div class="skill-group-lbl">Frontend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML / CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Blade Templates</span>
+            <span class="skill-tag">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <div class="skill-group-lbl">Tools & Technologies</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">AI-Assisted Dev</span>
+            <span class="skill-tag">XAMPP</span>
+            <span class="skill-tag">Figma</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <div class="skill-group-lbl">Core Strengths</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Clear Communication</span>
+            <span class="skill-tag">Analytical Problem-Solving</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Requirement Gathering</span>
+            <span class="skill-tag">Self-Directed Learning</span>
+            <span class="skill-tag">Adaptability</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════ -->
+  <section id="contact" aria-label="Contact">
+    <div class="contact-blob" aria-hidden="true"></div>
+    <div class="container contact-inner">
+      <p class="contact-eyebrow reveal">Available for full-time roles</p>
+      <h2 class="contact-headline reveal delay-1">Let's build something.</h2>
+      <p class="contact-sub reveal delay-2">
+        I'm actively looking for entry-level full-stack or backend opportunities.<br>
+        Government systems, civic tech, or any team that values clean, functional software.
+      </p>
+      <div class="contact-actions reveal delay-3">
+        <a href="mailto:cjsprite81@gmail.com" class="btn-primary magnetic" id="email-btn">cjsprite81@gmail.com</a>
+        <a href="https://www.linkedin.com/in/christopher-jude-espiritu-b130823a6/" target="_blank" rel="noopener" class="btn-secondary magnetic">LinkedIn ↗</a>
+        <button class="btn-ghost" id="copy-email-btn" aria-label="Copy email address">Copy Email</button>
+      </div>
+      <p class="contact-location reveal delay-4">📍 General Santos City, South Cotabato, Philippines</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <span class="footer-name">Christopher Jude N. Espiritu</span>
+      <span class="footer-copy">© 2026 · Built with HTML, CSS & Vanilla JS</span>
+      <div class="footer-links">
+        <a href="mailto:cjsprite81@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/christopher-jude-espiritu-b130823a6/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="resume.html" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONFETTI CANVAS (easter egg) -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
