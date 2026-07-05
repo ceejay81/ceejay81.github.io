@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1a5c3a">
   <title>Resume — Christopher Jude N. Espiritu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -29,10 +30,13 @@
       background: var(--bg);
       color: var(--text-primary);
       font-family: 'DM Mono', monospace;
-      font-size: 13px;
+      font-size: clamp(0.8125rem, 2.5vw, 0.8125rem);
       line-height: 1.7;
-      padding: 40px 20px;
+      padding: clamp(1rem, 4vw, 2.5rem) clamp(0.75rem, 3vw, 1.25rem);
+      padding-left: max(clamp(0.75rem, 3vw, 1.25rem), env(safe-area-inset-left));
+      padding-right: max(clamp(0.75rem, 3vw, 1.25rem), env(safe-area-inset-right));
       position: relative;
+      overflow-x: clip;
     }
 
     body::before {
@@ -56,6 +60,10 @@
       animation: fadeUp 0.7s ease forwards;
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      .resume { animation: none; }
+    }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -65,7 +73,7 @@
     .header {
       background: var(--accent);
       color: #fff;
-      padding: 48px 52px 40px;
+      padding: clamp(1.75rem, 5vw, 3rem) clamp(1.25rem, 4vw, 3.25rem) clamp(1.5rem, 4vw, 2.5rem);
       position: relative;
       overflow: hidden;
     }
@@ -94,11 +102,12 @@
 
     .name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
+      font-size: clamp(1.75rem, 6vw, 2.625rem);
       font-weight: 700;
       letter-spacing: 0.02em;
       line-height: 1.1;
       margin-bottom: 4px;
+      overflow-wrap: break-word;
     }
 
     .tagline {
@@ -113,10 +122,16 @@
     .contact-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px 24px;
-      font-size: 11.5px;
+      gap: 0.375rem 1rem;
+      font-size: clamp(0.6875rem, 2vw, 0.72rem);
       letter-spacing: 0.03em;
       opacity: 0.9;
+    }
+
+    .contact-row span,
+    .contact-row a {
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .contact-row span {
@@ -129,20 +144,19 @@
       opacity: 0.3;
     }
 
-    /* ── BODY ── */
+    /* ── BODY (mobile-first: single column) ── */
     .body {
       display: grid;
-      grid-template-columns: 1fr 280px;
-      gap: 0;
+      grid-template-columns: 1fr;
     }
 
     .main-col {
-      padding: 40px 44px 48px;
-      border-right: 1px solid var(--border);
+      padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1.25rem, 4vw, 2.75rem) clamp(1.5rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--border);
     }
 
     .side-col {
-      padding: 40px 32px 48px;
+      padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1.25rem, 4vw, 2rem);
       background: var(--accent-light);
     }
 
@@ -419,19 +433,23 @@
       }
     }
 
-    @media (max-width: 700px) {
+    @media (min-width: 700px) {
       .body {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 280px;
       }
       .main-col {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        border-bottom: none;
       }
-      .header { padding: 32px 28px 28px; }
-      .main-col { padding: 28px; }
-      .side-col { padding: 28px; }
-      .name { font-size: 32px; }
-      .contact-row { gap: 4px 16px; }
+    }
+
+    @media (max-width: 699px) {
+      .contact-row .divider:nth-child(n) {
+        display: none;
+      }
+      .contact-row span:not(.divider)::after {
+        content: none;
+      }
     }
   </style>
 </head>

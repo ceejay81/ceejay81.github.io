@@ -1,4 +1,9 @@
+document.documentElement.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+
   // Add loaded class to body to trigger page load animations
   setTimeout(() => {
     document.body.classList.add('loaded');
@@ -84,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.add('active');
       }
     });
-  });
+  }, { passive: true });
 
   // ══════════════════════════════════════
   // MOBILE HAMBURGER MENU
@@ -94,23 +99,52 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileLinks = document.querySelectorAll('.mobile-link');
 
   if (hamburger && mobileMenu) {
+    const closeMenu = () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      mobileMenu.setAttribute('inert', '');
+      document.body.classList.remove('menu-open');
+    };
+
+    const openMenu = () => {
+      hamburger.classList.add('open');
+      mobileMenu.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      mobileMenu.removeAttribute('inert');
+      document.body.classList.add('menu-open');
+      const firstLink = mobileMenu.querySelector('.mobile-link');
+      if (firstLink) firstLink.focus();
+    };
+
     const toggleMenu = () => {
-      const isOpen = hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
-      mobileMenu.setAttribute('aria-hidden', !isOpen);
+      const isOpen = hamburger.classList.contains('open');
+      if (isOpen) closeMenu();
+      else openMenu();
     };
 
     hamburger.addEventListener('click', toggleMenu);
 
     mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-      });
+      link.addEventListener('click', closeMenu);
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hamburger.classList.contains('open')) {
+        closeMenu();
+        hamburger.focus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && hamburger.classList.contains('open')) {
+        closeMenu();
+      }
+    }, { passive: true });
+
+    closeMenu();
   }
 
   // ══════════════════════════════════════
@@ -163,15 +197,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // MOUSE HOVER SPOTLIGHT GLOW
   // ══════════════════════════════════════
   const glowCards = document.querySelectorAll('.project-card, .facts-card, .tl-body');
-  glowCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
+  if (!isCoarsePointer) {
+    glowCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
     });
-  });
+  }
 
   // ══════════════════════════════════════
   // COUNTER UP ANIMATION
@@ -213,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // SCRAMBLE NAME EFFECT
   // ══════════════════════════════════════
   const nameEl = document.getElementById('scramble-name');
-  if (nameEl) {
+  if (nameEl && !prefersReducedMotion) {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     const originalText = nameEl.textContent;
     let isScrambling = false;
@@ -385,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // TYPEWRITER EFFECT
   // ══════════════════════════════════════
   const typewriterEl = document.getElementById('code-typewriter');
-  if (typewriterEl) {
+  if (typewriterEl && !prefersReducedMotion && window.matchMedia('(min-width: 1024px)').matches) {
     const codeText = `<span class="c-kw">class</span> <span class="c-cl">AppointmentController</span>
 {
   <span class="c-kw">public function</span> <span class="c-fn">book</span>(Request $r)

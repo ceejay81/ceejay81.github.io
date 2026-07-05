@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a5c3a" />
   <meta name="description" content="Christopher Jude N. Espiritu — Entry-Level Full-Stack Developer from General Santos City. Builder of production web systems for local government using Laravel, PHP, and Flutter." />
   <meta name="keywords" content="Christopher Jude Espiritu, full-stack developer, Laravel, PHP, Flutter, General Santos, portfolio" />
   <meta property="og:title" content="Christopher Jude N. Espiritu — Full-Stack Developer" />
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- CUSTOM CURSOR -->
   <div class="cursor-dot" id="cursor-dot"></div>
@@ -44,7 +46,7 @@
   </nav>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
     <ul role="list">
       <li><a href="#about"      class="mobile-link">About</a></li>
       <li><a href="#projects"   class="mobile-link">Projects</a></li>
@@ -58,15 +60,15 @@
   <!-- ══════════════════════════════════════
        HERO
   ══════════════════════════════════════ -->
-  <section id="hero" aria-label="Introduction">
+  <section id="hero" aria-label="Introduction" tabindex="-1">
     <div class="hero-content">
       <p class="hero-eyebrow load-anim" style="--delay:0.1s">Entry-Level Full-Stack Developer</p>
       <h1 class="hero-headline load-anim" style="--delay:0.25s">
         Hi, I'm <span id="scramble-name">Jude</span>.
       </h1>
       <p class="hero-sub load-anim" style="--delay:0.4s">
-        I build production systems for local government —<br>
-        four deployed, three live, all serving real users.
+        I build production systems for local government —
+        <span class="line-break">four deployed, three live, all serving real users.</span>
       </p>
       <div class="hero-cta load-anim" style="--delay:0.55s">
         <a href="#projects" class="btn-primary magnetic" id="hero-cta-primary">View My Work ↓</a>
@@ -124,6 +126,7 @@
   <!-- ══════════════════════════════════════
        ABOUT
   ══════════════════════════════════════ -->
+  <main id="main-content">
   <section id="about" aria-label="About me">
     <div class="container">
       <h2 class="section-title split-target">About</h2>
@@ -384,8 +387,8 @@
       <p class="contact-eyebrow reveal">Available for full-time roles</p>
       <h2 class="contact-headline reveal delay-1">Let's build something.</h2>
       <p class="contact-sub reveal delay-2">
-        I'm actively looking for entry-level full-stack or backend opportunities.<br>
-        Government systems, civic tech, or any team that values clean, functional software.
+        I'm actively looking for entry-level full-stack or backend opportunities.
+        <span class="line-break">Government systems, civic tech, or any team that values clean, functional software.</span>
       </p>
       <div class="contact-actions reveal delay-3">
         <a href="mailto:cjsprite81@gmail.com" class="btn-primary magnetic" id="email-btn">cjsprite81@gmail.com</a>
@@ -395,6 +398,7 @@
       <p class="contact-location reveal delay-4">📍 General Santos City, South Cotabato, Philippines</p>
     </div>
   </section>
+  </main>
 
   <!-- ══════════════════════════════════════
        FOOTER
